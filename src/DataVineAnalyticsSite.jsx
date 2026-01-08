@@ -205,6 +205,50 @@ export default function DataVineAnalyticsSite() {
   const year = new Date().getFullYear();
   const { copied, copy } = useCopyToClipboard();
 
+{/* -- THE FOLLOWING FUNCTION IS RELATED TO THE EMAIL SUBMISSION -- */} 
+  const [contactStatus, setContactStatus] = useState({ state: "idle", message: "" });
+  // state: "idle" | "sending" | "success" | "error"
+
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/maqnrgrk";
+
+  async function handleContactSubmit(e) {
+    e.preventDefault();
+    setContactStatus({ state: "sending", message: "" });
+
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        form.reset();
+        setContactStatus({
+          state: "success",
+          message: "Thanks—your message has been sent. We’ll get back to you shortly.",
+        });
+        return;
+      }
+
+      let errorMessage = "Sorry—something went wrong. Please try again.";
+      try {
+        const data = await res.json();
+        if (data?.errors?.length) errorMessage = data.errors.map((x) => x.message).join(" ");
+      } catch {}
+
+      setContactStatus({ state: "error", message: errorMessage });
+    } catch {
+      setContactStatus({
+        state: "error",
+        message: "Network error—please try again, or email us directly.",
+      });
+    }
+  }
+
   const { scrollY } = useScroll();
   const heroGlowY = useTransform(scrollY, [0, 900], [0, 70]);
   const heroGlowOpacity = useTransform(scrollY, [0, 900], [1, 0.35]);
@@ -719,17 +763,12 @@ export default function DataVineAnalyticsSite() {
           <div className="grid gap-5 lg:grid-cols-12">
             <motion.div {...fadeUp} className="lg:col-span-7">
               <Card>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert("Demo form only. Hook this up to Formspree/Resend/your backend when ready.");
-                  }}
-                  className="space-y-4"
-                >
+                <form onSubmit={handleContactSubmit} className="space-y-4">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="space-y-2">
                       <div className="text-xs text-slate-500">Name</div>
                       <input
+                        name="name"
                         className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-emerald-300"
                         placeholder="Your name"
                         required
@@ -738,6 +777,7 @@ export default function DataVineAnalyticsSite() {
                     <label className="space-y-2">
                       <div className="text-xs text-slate-500">Work email</div>
                       <input
+                        name="email"
                         type="email"
                         className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-emerald-300"
                         placeholder="name@company.com"
@@ -749,10 +789,11 @@ export default function DataVineAnalyticsSite() {
                   <label className="space-y-2">
                     <div className="text-xs text-slate-500">What outcomes do you want?</div>
                     <textarea
-                      rows={5}
-                      className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-emerald-300"
-                      placeholder="Example: unify KPI definitions, build an exec dashboard, instrument funnels, reduce data quality issues…"
-                      required
+                        name="message"
+                        rows={5}
+                        className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-emerald-300"
+                        placeholder="Example: unify KPI definitions, build an exec dashboard, instrument funnels, reduce data quality issues…"
+                        required
                     />
                   </label>
 
@@ -769,6 +810,20 @@ export default function DataVineAnalyticsSite() {
                         contact@tiare.io
                       </a>
                     </div>
+                    {contactStatus.state !== "idle" && (
+                        <p
+                            className={`text-sm ${
+                                contactStatus.state === "success"
+                                    ? "text-emerald-700"
+                                    : contactStatus.state === "error"
+                                    ? "text-rose-700"
+                                    : "text-slate-600"
+                            }`}
+                            role="status"
+                        >
+                            {contactStatus.state === "sending" ? "Sending…" : contactStatus.message}
+                        </p>
+                    )}
                   </div>
                 </form>
               </Card>
