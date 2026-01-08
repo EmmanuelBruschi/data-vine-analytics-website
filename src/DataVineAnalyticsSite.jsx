@@ -46,7 +46,7 @@ function useCopyToClipboard() {
 }
 
 const Section = ({ id, eyebrow, title, subtitle, children }) => (
-  <section id={id} className="scroll-mt-24 py-16 sm:py-20">
+  <section id={id} className="scroll-mt24 py-16 sm:py-16">
     <div className="mx-auto max-w-6xl px-6">
       <motion.div {...fadeUp}>
         {eyebrow ? (
@@ -224,37 +224,37 @@ export default function DataVineAnalyticsSite() {
     () => [
       {
         icon: BarChart3,
-        title: "Executive dashboards & KPIs",
+        title: "Executive Dashboards & KPIs",
         body: "Define north stars, instrumentation, and decision-ready dashboards without the BI sprawl.",
         bullets: ["Metric definitions & governance", "Tableau/Looker/Power BI builds", "Self-serve enablement"],
       },
       {
         icon: Database,
-        title: "Modern data foundations",
+        title: "Modern Data Foundations",
         body: "A pragmatic path to a clean warehouse and reliable pipelines. Snowflake, BigQuery, Databricks, dbt, Airflow.",
         bullets: ["Warehouse schema design", "Data quality & SLAs", "Cost & performance tuning"],
       },
       {
         icon: LineChart,
-        title: "Growth analytics & experimentation",
+        title: "Growth Analytics & Experimentation",
         body: "Design experiments, interpret results, and operationalize learning to improve conversion, retention, and LTV.",
         bullets: ["Experiment design", "Causal analysis", "Funnel & cohort deep dives"],
       },
       {
         icon: Braces,
-        title: "Analytics engineering",
+        title: "Analytics Engineering",
         body: "Build reusable models, semantic layers, and documentation that scale across teams and use cases.",
         bullets: ["dbt modeling", "Semantic layer", "Documentation & lineage"],
       },
       {
         icon: ShieldCheck,
-        title: "Data privacy & compliance",
+        title: "Data Privacy & Compliance",
         body: "Enable analytics while managing risk: access controls, PII handling, and compliance-friendly processes.",
         bullets: ["PII minimization", "RBAC & auditing", "Policy-as-code patterns"],
       },
       {
         icon: Users,
-        title: "Team upskilling & operating model",
+        title: "Team Upskilling & Operating Model",
         body: "Workshops, playbooks, and routines to level up data literacy and reduce ad hoc chaos.",
         bullets: ["Analytics review cadence", "Metric playbooks", "Stakeholder alignment"],
       },
@@ -296,13 +296,13 @@ export default function DataVineAnalyticsSite() {
     () => [
       {
         label: "Marketplace",
-        title: "Improved conversion visibility across acquisition → activation",
+        title: "Improved Conversion Visibility Across Acquisition → Activation",
         body: "Unified tracking, standardized funnel metrics, and built an exec dashboard suite that reduced reporting time and improved actionability.",
         outcomes: ["Single source of truth for KPIs", "Faster weekly decision cycles", "Reduced metric disputes"],
       },
       {
         label: "B2B SaaS",
-        title: "Built a scalable revenue analytics model",
+        title: "Built a Scalable Revenue Analytics Model",
         body: "Implemented a governed semantic layer and curated datasets for sales, marketing, and finance.",
         outcomes: ["Consistent pipeline definitions", "Self-serve for GTM", "Improved forecast hygiene"],
       },
@@ -320,15 +320,49 @@ export default function DataVineAnalyticsSite() {
     () => [
       {
         q: "What types of engagements do you offer?",
-        a: "Project-based delivery (4–12 weeks), fractional analytics leadership, and ongoing retainer support. We scope around outcomes and deliverables, then ship.",
+        a: (
+        <div>
+          <p className="mb-3">
+            We offer three engagement types:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Project-based builds (2–8 weeks)</li>
+            <li>Retainers for ongoing analytics delivery and support</li>
+            <li>
+              Embedded engagements (3–12+ months) where a consultant stays with your team to own an analytics lane end-to-end
+            </li>
+          </ul>
+          <p className="mt-3">
+            We scope around outcomes and ship weekly.
+          </p>
+        </div>
+      ),
       },
       {
         q: "What tools do you work with?",
-        a: "Snowflake, BigQuery, Databricks, dbt, Airflow, Fivetran, Segment, Amplitude, GA4, Tableau, Looker, Power BI, and modern observability tooling. We adapt to your stack.",
+        a: (
+        <div>
+          <p className="mb-3">
+            We work with a variety of modern data stack and data visualization tools, including:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Snowflake</li>
+            <li>Google BigQuery</li>
+            <li>Databricks</li>
+            <li>Tableau</li>
+            <li>Looker</li>
+            <li>Lark Base</li>
+            <li>And more...</li>
+          </ul>
+          <p className="mt-3">
+            We adapt to your stack.
+          </p>
+        </div>
+      ),
       },
       {
         q: "How do you ensure data quality and trust?",
-        a: "We implement metric definitions, automated tests, lineage/documentation, and a lightweight governance model—plus monitoring with clear ownership and SLAs.",
+        a: "We implement metric definitions, automated tests, lineage/documentation, a lightweight governance model, and monitoring with clear ownership and SLAs.",
       },
     ],
     []
@@ -352,7 +386,7 @@ export default function DataVineAnalyticsSite() {
               <div className="text-sm font-semibold tracking-tight text-slate-900">
                 Data Vine Analytics
               </div>
-              <div className="text-xs text-slate-500">Technical Insights and Analytics Research Enterprise</div>
+              <div className="text-xs text-slate-500">Technical Insights and Analytics Research</div>
             </div>
           </a>
 
@@ -399,16 +433,15 @@ export default function DataVineAnalyticsSite() {
               <div className="lg:col-span-7">
                 <motion.div {...fadeUp}>
                   <div className="flex flex-wrap gap-2">
-                    <Pill tone="emerald">Analytics consulting for tech companies</Pill>
-                    <Pill tone="indigo">Dashboards • Data foundations • Experimentation</Pill>
+                    <Pill tone="emerald">Analytics Partner for Tech Teams</Pill>
+                    <Pill tone="indigo">Dashboards · Metrics Layer · Experimentation</Pill>
                   </div>
 
                   <h1 className="mt-6 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-                    Turn messy data into clear decisions.
+                    Turn Messy Data Into Clear Decisions
                   </h1>
                   <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-                    Data Vine Analytics helps Marketing, product, and growth teams build trusted metrics, modern data models,
-                    and executive-ready reporting so you can move faster with confidence.
+                    Data Vine Analytics help marketing, product, and growth teams build trusted metrics, reliable data models, and exec-ready reporting so decisions are faster, clearer, and aligned.
                   </p>
 
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -416,7 +449,7 @@ export default function DataVineAnalyticsSite() {
                       href="#contact"
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-500 transition"
                     >
-                      Request a consult <ArrowRight className="h-4 w-4" />
+                      Book a consult <ArrowRight className="h-4 w-4" />
                     </a>
                     <a
                       href="#services"
@@ -430,21 +463,21 @@ export default function DataVineAnalyticsSite() {
                     <Card>
                       <div className="flex items-center gap-3">
                         <Building2 className="h-5 w-5 text-emerald-700" />
-                        <div className="text-sm font-semibold">Tech-native</div>
+                        <div className="text-sm font-semibold">Tech-Native</div>
                       </div>
                       <Small>We bridge strategy and execution, delivering analytics your teams can run with.</Small>
                     </Card>
                     <Card>
                       <div className="flex items-center gap-3">
                         <CheckCircle2 className="h-5 w-5 text-emerald-700" />
-                        <div className="text-sm font-semibold">Decision-ready</div>
+                        <div className="text-sm font-semibold">Built for Decisions</div>
                       </div>
                       <Small>Dashboards and metrics designed for action, not reporting theater.</Small>
                     </Card>
                     <Card>
                       <div className="flex items-center gap-3">
                         <Globe className="h-5 w-5 text-emerald-700" />
-                        <div className="text-sm font-semibold">Pragmatic scale</div>
+                        <div className="text-sm font-semibold">Ready to Scale</div>
                       </div>
                       <Small>Enterprise-grade analytics foundations: governed, monitored, and built for adoption.</Small>
                     </Card>
@@ -458,18 +491,17 @@ export default function DataVineAnalyticsSite() {
                     <div className="p-6">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="text-xs text-slate-500">Sample deliverables</div>
-                          <div className="mt-1 text-sm font-semibold">30-day analytics uplift</div>
+                          <div className="text-xs text-slate-500">What you'll get</div>
+                          <div className="mt-1 text-sm font-semibold">Analytics Foundations</div>
                         </div>
-                        <Pill tone="slate">Example</Pill>
                       </div>
 
                       <div className="mt-5 space-y-4">
                         {[
-                          { icon: Database, title: "Curated datasets", desc: "Cleaned models for core entities (users, accounts, orders)." },
-                          { icon: BarChart3, title: "KPI tree", desc: "North star + supporting metrics with definitions & owners." },
-                          { icon: LineChart, title: "Exec dashboard", desc: "Decision-ready views with drilldowns and commentary." },
-                          { icon: ShieldCheck, title: "Data trust layer", desc: "Tests, monitoring, and SLAs for reliability." },
+                          { icon: Database, title: "Curated Data Models", desc: "Clean, documented models for core entities (users, accounts, orders)." },
+                          { icon: BarChart3, title: "KPI Tree & Definitions", desc: "North star + supporting metrics with definitions and owners." },
+                          { icon: LineChart, title: "Executive Dashboard", desc: "Executive-ready views with drilldowns and narrative." },
+                          { icon: ShieldCheck, title: "Data Quality & Trust Layer", desc: "Tests, monitoring, and SLAs to keep reporting reliable." },
                         ].map((x) => (
                           <div key={x.title} className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
                             <div className="grid h-9 w-9 flex-none place-items-center rounded-xl border border-slate-200 bg-white">
@@ -484,8 +516,8 @@ export default function DataVineAnalyticsSite() {
                       </div>
 
                       <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
-                        <div className="text-xs text-slate-500">Engagement model</div>
-                        <div className="mt-1 text-sm font-semibold">Outcome-based, with weekly deliverables</div>
+                        <div className="text-xs text-slate-500">Engagement Model</div>
+                        <div className="mt-1 text-sm font-semibold">Outcome-Based, With Weekly Deliverables</div>
                         <div className="mt-2 text-xs leading-5 text-slate-600">
                           Scoped around business impact, with progress you can review every week.
                         </div>
@@ -494,12 +526,11 @@ export default function DataVineAnalyticsSite() {
 
                     <div className="border-t border-slate-200 bg-white p-5">
                       <div className="flex flex-wrap items-center justify-between gap-3">
-                        <div className="text-xs text-slate-600">Want this template? We can tailor it to your stack.</div>
                         <a
                           href="#contact"
                           className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-500 transition"
                         >
-                          Get a proposal <ArrowRight className="h-4 w-4" />
+                          Book a call <ArrowRight className="h-4 w-4" />
                         </a>
                       </div>
                     </div>
@@ -515,8 +546,8 @@ export default function DataVineAnalyticsSite() {
         {/* Services */}
         <Section
           id="services"
-          eyebrow="What we do"
-          title="Analytics that ships and scales"
+          eyebrow="What We Do"
+          title="Analytics That Ships and Scales"
           subtitle="Engagements designed for clarity, adoption, and durability. We meet you where you are; then modernize with intent."
         >
           <div className="grid gap-5 md:grid-cols-2">
@@ -571,8 +602,8 @@ export default function DataVineAnalyticsSite() {
         {/* Approach */}
         <Section
           id="approach"
-          eyebrow="How we work"
-          title="A simple, rigorous engagement model"
+          eyebrow="How We Work"
+          title="A Simple, Rigorous Engagement Model"
           subtitle="We prioritize speed to value, but never at the cost of trust. Each phase produces concrete, reviewable artifacts."
         >
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -607,9 +638,9 @@ export default function DataVineAnalyticsSite() {
         {/* Work */}
         <Section
           id="work"
-          eyebrow="Selected work"
-          title="Representative outcomes"
-          subtitle="Below are anonymized, typical engagements we run for tech teams."
+          eyebrow="Selected Work"
+          title="Representative Outcomes"
+          subtitle="Below are anonymized, typical engagements we run for our clients."
         >
           <div className="grid gap-5 lg:grid-cols-3">
             {caseStudies.map((c) => (
@@ -622,7 +653,7 @@ export default function DataVineAnalyticsSite() {
                 <Card>
                   <div className="flex items-center justify-between">
                     <Pill tone="slate">{c.label}</Pill>
-                    <div className="text-xs text-slate-500">Case study</div>
+                    {/*<div className="text-xs text-slate-500">Case study</div>*/}
                   </div>
                   <div className="mt-4 text-base font-semibold">{c.title}</div>
                   <div className="mt-2 text-sm leading-6 text-slate-600">{c.body}</div>
@@ -643,9 +674,9 @@ export default function DataVineAnalyticsSite() {
         {/* About */}
         <Section
           id="about"
-          eyebrow="Who we are"
+          eyebrow="Who We Are"
           title="Data Vine Analytics on tiare.io"
-          subtitle="TIARE stands for Technical Insights and Analytics Research Enterprise. We combine product sense with engineering rigor to help teams build analytics that drives outcomes."
+          subtitle="TIARE stands for Technical Insights and Analytics Research. We combine product sense with engineering rigor to help teams build analytics that drives outcomes."
         >
           <div className="mt-10">
             <motion.div {...fadeUp} className="lg:col-span-7">
@@ -799,7 +830,7 @@ export default function DataVineAnalyticsSite() {
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-xs text-slate-500">© {year} Data Vine Analytics. All rights reserved.</div>
-            <div className="text-xs text-slate-500">TIARE: Technical Insights and Analytics Research Enterprise</div>
+            <div className="text-xs text-slate-500">TIARE: Technical Insights and Analytics Research</div>
           </div>
         </div>
       </footer>
