@@ -320,7 +320,7 @@ export default function DataVineAnalyticsSite() {
     () => [
       {
         q: "What types of engagements do you offer?",
-        a: "Project-based delivery (4–12 weeks), fractional analytics leadership, and ongoing retainer support. We scope around outcomes and deliverables—then ship.",
+        a: "Project-based delivery (4–12 weeks), fractional analytics leadership, and ongoing retainer support. We scope around outcomes and deliverables, then ship.",
       },
       {
         q: "What tools do you work with?",
@@ -366,12 +366,12 @@ export default function DataVineAnalyticsSite() {
 
           <div className="flex items-center gap-3">
             <button
-              onClick={() => copy("hello@tiare.io")}
+              onClick={() => copy("contact@tiare.io")}
               className="hidden sm:inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 transition"
               title="Copy email"
             >
               <Mail className="h-4 w-4" />
-              {copied ? "Copied" : "hello@tiare.io"}
+              {copied ? "Copied" : "contact@tiare.io"}
             </button>
             <a
               href="#contact"
@@ -734,8 +734,8 @@ export default function DataVineAnalyticsSite() {
                     </button>
                     <div className="text-xs text-slate-500">
                       Or email us at{" "}
-                      <a className="text-slate-700 hover:text-slate-900 underline underline-offset-4" href="mailto:hello@tiare.io">
-                        hello@tiare.io
+                      <a className="text-slate-700 hover:text-slate-900 underline underline-offset-4" href="mailto:contact@tiare.io">
+                        contact@tiare.io
                       </a>
                     </div>
                   </div>
@@ -750,10 +750,10 @@ export default function DataVineAnalyticsSite() {
                   <div className="mt-4 space-y-3">
                     <a
                       className="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 hover:bg-slate-100 transition"
-                      href="mailto:hello@tiare.io"
+                      href="mailto:contact@tiare.io"
                     >
                       <span className="inline-flex items-center gap-2">
-                        <Mail className="h-4 w-4" /> hello@tiare.io
+                        <Mail className="h-4 w-4" /> contact@tiare.io
                       </span>
                       <ArrowRight className="h-4 w-4" />
                     </a>
