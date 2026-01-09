@@ -229,7 +229,7 @@ export default function DataVineAnalyticsSite() {
         form.reset();
         setContactStatus({
           state: "success",
-          message: "Thanks—your message has been sent. We’ll get back to you shortly.",
+          message: "Message sent.",
         });
         return;
       }
