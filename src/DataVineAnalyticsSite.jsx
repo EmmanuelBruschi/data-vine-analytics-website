@@ -763,7 +763,7 @@ export default function DataVineAnalyticsSite() {
           <div className="grid gap-5 lg:grid-cols-12">
             <motion.div {...fadeUp} className="lg:col-span-7">
               <Card>
-                <form onSubmit={handleContactSubmit} className="space-y-4">
+                <form onSubmit={handleContactSubmit} className="flex flex-col gap-4">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="space-y-2">
                       <div className="text-xs text-slate-500">Name</div>
@@ -786,7 +786,7 @@ export default function DataVineAnalyticsSite() {
                     </label>
                   </div>
 
-                  <label className="space-y-2">
+                  <label className="mt-2 sm:mt-2 space-y-2">
                     <div className="text-xs text-slate-500">What outcomes do you want?</div>
                     <textarea
                         name="message"
