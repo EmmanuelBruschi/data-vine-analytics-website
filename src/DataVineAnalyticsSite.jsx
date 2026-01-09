@@ -452,10 +452,19 @@ export default function DataVineAnalyticsSite() {
               {copied ? "Copied" : "contact@tiare.io"}
             </button>
             <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500 transition"
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-500 transition sm:px-4"
+                aria-label="Contact us"
             >
-              Talk to us <ArrowRight className="h-4 w-4" />
+                {/* Mobile: icon only */}
+                <span className="sm:hidden inline-flex items-center">
+                    <Mail className="h-5 w-5" />
+                </span>
+
+                {/* Desktop/tablet: text + arrow */}
+                <span className="hidden sm:inline-flex items-center gap-2">
+                    Talk to us <ArrowRight className="h-4 w-4" />
+                </span>
             </a>
           </div>
         </div>
