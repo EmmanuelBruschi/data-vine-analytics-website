@@ -1,3 +1,4 @@
+import logoMark from "./assets/dva-logo.svg";
 import React, { useMemo, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
@@ -423,12 +424,16 @@ export default function DataVineAnalyticsSite() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/70 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="#" className="group inline-flex items-center gap-3">
-            <div className="grid h-10 w-10 place-items-center rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <span className="text-sm font-semibold tracking-tight">DV</span>
+            <div className="grid h-10 w-10 place-items-center rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+                <img
+                    src={logoMark}
+                    alt="Data Vine Consulting"
+                    className="h-6 w-6"
+              />
             </div>
             <div className="leading-tight">
               <div className="text-sm font-semibold tracking-tight text-slate-900">
-                Data Vine Analytics
+                Data Vine Consulting
               </div>
               <div className="text-xs text-slate-500">Technical Insights and Analytics Research</div>
             </div>
@@ -494,7 +499,7 @@ export default function DataVineAnalyticsSite() {
                     Turn Messy Data Into Clear Decisions
                   </h1>
                   <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-                    Data Vine Analytics help marketing, product, and growth teams build trusted metrics, reliable data models, and exec-ready reporting so decisions are faster, clearer, and aligned.
+                    Data Vine Consulting help marketing, product, and growth teams build trusted metrics, reliable data models, and exec-ready reporting so decisions are faster, clearer, and aligned.
                   </p>
 
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -728,7 +733,7 @@ export default function DataVineAnalyticsSite() {
         <Section
           id="about"
           eyebrow="Who We Are"
-          title="Data Vine Analytics on tiare.io"
+          title="Data Vine Consulting on tiare.io"
           subtitle="TIARE stands for Technical Insights and Analytics Research. We combine product sense with engineering rigor to help teams build analytics that drives outcomes."
         >
           <div className="mt-10">
@@ -874,7 +879,7 @@ export default function DataVineAnalyticsSite() {
                 <span className="text-sm font-semibold tracking-tight">DV</span>
               </div>
               <div>
-                <div className="text-sm font-semibold">Data Vine Analytics</div>
+                <div className="text-sm font-semibold">Data Vine Consulting</div>
                 <div className="text-xs text-slate-500">Built for speed, clarity, and trust.</div>
               </div>
             </div>
@@ -893,7 +898,7 @@ export default function DataVineAnalyticsSite() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <div className="text-xs text-slate-500">© {year} Data Vine Analytics. All rights reserved.</div>
+            <div className="text-xs text-slate-500">© {year} Data Vine Consulting. All rights reserved.</div>
             <div className="text-xs text-slate-500">TIARE: Technical Insights and Analytics Research</div>
           </div>
         </div>
