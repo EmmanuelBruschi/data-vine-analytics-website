@@ -733,8 +733,8 @@ export default function DataVineAnalyticsSite() {
         <Section
           id="about"
           eyebrow="Who We Are"
-          title="Data Vine Consulting on tiare.io"
-          subtitle="TIARE stands for Technical Insights and Analytics Research. We combine product sense with engineering rigor to help teams build analytics that drives outcomes."
+          title="Data Vine Consulting"
+          subtitle="Data Vine is your insights and analytics partner. We combine product sense with engineering rigor to help teams build analytics that drives outcomes."
         >
           <div className="mt-10">
             <motion.div {...fadeUp} className="lg:col-span-7">
@@ -898,8 +898,7 @@ export default function DataVineAnalyticsSite() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <div className="text-xs text-slate-500">© {year} Data Vine Consulting. All rights reserved.</div>
-            <div className="text-xs text-slate-500">TIARE: Technical Insights and Analytics Research</div>
+            <div className="text-xs text-slate-500">© {year} Data Vine Consulting LLC. All rights reserved.</div>
           </div>
         </div>
       </footer>
